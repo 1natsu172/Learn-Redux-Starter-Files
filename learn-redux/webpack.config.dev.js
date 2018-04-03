@@ -16,11 +16,15 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
   module: {
     loaders: [
     // js
     {
-      test: /\.js$/,
+      // test: /\.js$/,
+      test: /\.(js|jsx|mjs)$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'client')
     },
